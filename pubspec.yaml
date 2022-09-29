@@ -71,12 +71,11 @@ flutter:
     - assets/noche_despejada.jpg
     - assets/dia_lluvia.jpg
     - assets/dia_nubes.jpg
-    - assets/luna.jpg
-    - assets/moon.svg
-    - assets/cloudy.svg
-    - assets/sun.svg
-    - assets/rain.svg
-    - assets/menu.svg
+    - assets/noche_nubes.jpg
+    - assets/noche_lluvia.jpg
+    - assets/dia_tormenta.jpg
+    - assets/noche_tormenta.jpg
+    - assets/dia_opaco.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
