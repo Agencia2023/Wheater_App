@@ -1,6 +1,6 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
-import './screens/weather_app.dart';
+import 'pages/home.page.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: WeatherApp(),
+      home: HomePage(),
     );
   }
 }
