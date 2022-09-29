@@ -4,6 +4,7 @@ import '../models/weather_locations.dart';
 import '../provider/wheater.provider.dart';
 import '../screens/wheater.screen.dart';
 import '../widgets/additional_information.dart';
+import 'package:searchfield/searchfield.dart';
 
 import 'package:intl/intl.dart';
 
@@ -17,14 +18,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   WheaterProvider client = WheaterProvider();
   Weather? data;
+  late TextEditingController searchController;
 
+  @override
   var coloricon;
   String bgImg = ('');
   Future<void> getData() async {
-    data = await client.ObtenerWheater("Bogota");
+    data = await client.ObtenerWheater("Villavicencio");
+    void initState() {
+      super.initState();
+      searchController = TextEditingController();
+    }
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
@@ -40,12 +46,12 @@ class _HomePageState extends State<HomePage> {
               color: coloricon,
             ),
           ),
-          actions: <Widget>[
-            new IconButton(
-              onPressed: () => debugPrint("menu"),
-              icon: new Icon(Icons.menu),
-            ),
-          ],
+          // actions: <Widget>[
+          //   new IconButton(
+          //     onPressed: () => debugPrint("menu"),
+          //     icon: new Icon(Icons.menu),
+          //   ),
+          // ],
         ),
         body: FutureBuilder(
           future: getData(),
@@ -54,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               final timestamp1 = data!.dt; // timestamp in seconds
               final DateTime date1 =
                   DateTime.fromMillisecondsSinceEpoch(timestamp1! * 1000);
-              print(data!.wind);
+              print(date1);
               if (data!.main == 'clear sky') {
                 bgImg = 'assets/dia_soleado.jpg';
                 coloricon = Colors.black;
@@ -80,6 +86,7 @@ class _HomePageState extends State<HomePage> {
 
                   //adi
                   additionalInformation(
+                      "${date1}",
                       "${data!.cityName}",
                       "${data!.main}",
                       "${data!.temp}",
