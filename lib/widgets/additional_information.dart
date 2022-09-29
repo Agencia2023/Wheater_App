@@ -20,7 +20,8 @@ Widget additionalInformation(
     String rain,
     String humidity,
     String pressure,
-    String feels_like) {
+    String feels_like,
+    String icon) {
   return Container(
     width: double.infinity,
     padding: EdgeInsets.all(18.0),

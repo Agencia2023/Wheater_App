@@ -6,6 +6,7 @@ import '../screens/wheater.screen.dart';
 import '../widgets/additional_information.dart';
 import 'package:searchfield/searchfield.dart';
 
+
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
@@ -63,15 +64,33 @@ class _HomePageState extends State<HomePage> {
               print(date1);
               if (data!.main == 'clear sky') {
                 bgImg = 'assets/dia_soleado.jpg';
+              print(data!.icon);
+              if (data!.icon == '03n') {
+                bgImg = 'assets/noche_nubes.jpg';
                 coloricon = Colors.black;
-              } else if (data!.main == 'Night') {
+              } else if (data!.icon == '01n') {
                 bgImg = 'assets/noche_despejada.jpg';
                 coloricon = Colors.white;
-              } else if (data!.main == "Rain") {
+              } else if (data!.icon == '01d') {
+                bgImg = 'assets/dia_soleado.jpg';
+                coloricon = Colors.black;
+              } else if (data!.icon == '02d') {
+                bgImg = 'assets/dia_opaco.jpg';
+                coloricon = Colors.black;
+              } else if (data!.icon == '09n') {
+                bgImg = 'assets/noche_lluvia.jpg';
+                coloricon = Colors.black;
+              } else if (data!.icon == "09d") {
                 bgImg = 'assets/dia_lluvia.jpg';
                 coloricon = Colors.black;
-              } else if (data!.main == 'Clouds') {
-                bgImg = 'assets/dia_nubes.jpg';
+              } else if (data!.icon == "11d") {
+                bgImg = 'assets/dia_tormenta.jpg';
+                coloricon = Colors.black;
+              } else if (data!.icon == "11n") {
+                bgImg = 'assets/noche_tormenta.jpg';
+                coloricon = Colors.black;
+              } else if (data!.icon == '04n') {
+                bgImg = 'assets/noche_nubes.jpg';
                 coloricon = Colors.black;
               }
 
@@ -95,7 +114,8 @@ class _HomePageState extends State<HomePage> {
                       "${data!.dt}",
                       "${data!.humidity}",
                       "${data!.pressure}",
-                      "${data!.feels_like}"),
+                      "${data!.feels_like}",
+                      "${data!.icon}"),
 
                   //uidone
 
