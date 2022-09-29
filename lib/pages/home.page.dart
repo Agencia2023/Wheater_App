@@ -4,7 +4,6 @@ import '../models/weather_locations.dart';
 import '../provider/wheater.provider.dart';
 import '../screens/wheater.screen.dart';
 import '../widgets/additional_information.dart';
-import '../widgets/current_weather.dart';
 import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
