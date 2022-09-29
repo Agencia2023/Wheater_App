@@ -11,6 +11,7 @@ TextStyle infoFont =
     const TextStyle(fontWeight: FontWeight.w400, fontSize: 18.0);
 
 Widget additionalInformation(
+    String date,
     String cityName,
     String main,
     String temp,
@@ -51,7 +52,7 @@ Widget additionalInformation(
                     height: 5,
                   ),
                   Text(
-                    "$dt",
+                    "$date",
                     style: GoogleFonts.lato(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -69,6 +70,17 @@ Widget additionalInformation(
                       fontSize: 85,
                       fontWeight: FontWeight.w600,
                       //  color: colortexto,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Text(
+                    "Centigrados",
+                    style: GoogleFonts.lato(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      // color: colortexto,
                     ),
                   ),
                   // Row(
